@@ -1,0 +1,18 @@
+\begin{tikzpicture}[>=Stealth,font=\small,block/.style={draw,minimum width=1.8cm,minimum height=.9cm,align=center}]
+\node[block] (decode) at (0,0) {Decode};
+\node[block] (rename) at (2.5,0) {Rename};
+\node[block] (rob) at (5,0) {ROB};
+\node[block] (schedule) at (7.5,0) {Schedule};
+\node[block] (execute) at (10,0) {Execute};
+\draw[->] (decode)--(rename); \draw[->] (rename)--(rob);
+\draw[->] (rob)--(schedule); \draw[->] (schedule)--(execute);
+\node[block] (rat) at (2.5,-1.9) {RAT};
+\node[block] (commit) at (5,-3.6) {Commit};
+\node[block] (wb) at (10,-1.9) {Writeback};
+\draw[<->] (rat.north)--node[left,font=\footnotesize]{tags}(rename.south);
+\draw[->] (execute.south)--(wb.north);
+\draw[->] (wb.west)-|node[pos=.25,above,font=\footnotesize]{ready / wakeup}(rob.south);
+\draw[->] (rob.south)--++(0,-.7)--++(-1.25,0)--(3.75,-2.8)-|(commit.north);
+\node[font=\footnotesize,align=center] at (6.6,-3.6) {in-order\\retirement};
+\draw[->,dashed] (commit.west)-|node[pos=.5,below,font=\footnotesize]{clear matching alias}(rat.south);
+\end{tikzpicture}

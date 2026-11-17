@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=Stealth,font=\small,block/.style={draw,minimum width=2.2cm,minimum height=.8cm,align=center}]
+\node[block] (c0) at (0,0) {Core 0};
+\node[block] (c1) at (5,0) {Core 1};
+\node[block] (l0) at (0,-1.4) {Private L1 I/D};
+\node[block] (l1) at (5,-1.4) {Private L1 I/D};
+\node[block,minimum width=3.4cm] (l2) at (2.5,-3) {Shared L2\\owner + LRU state};
+\node[block] (dram) at (2.5,-4.7) {DRAM};
+\node[block] (umon) at (9,-3) {Per-core hit\\estimates};
+\node[block] (alloc) at (9,-4.7) {Greedy way\\allocation};
+\draw[->] (c0)--(l0); \draw[->] (c1)--(l1);
+\draw[->] (l0.south)--++(0,-.4)-|(l2.north);
+\draw[->] (l1.south)--++(0,-.4)-|(l2.north);
+\draw[<->] (l2)--node[left,font=\footnotesize]{misses / fills}(dram);
+\draw[->] (l2.east)--node[above,font=\footnotesize]{observed recency}(umon.west);
+\draw[->] (umon)--node[right,font=\footnotesize]{interval update}(alloc);
+\draw[->,dashed] (alloc.west)--(6,-4.7)--(6,-3.9)-|node[pos=.25,above,font=\footnotesize]{targets} (l2.south east);
+\end{tikzpicture}

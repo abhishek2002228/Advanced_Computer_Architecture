@@ -1,0 +1,16 @@
+mix,policy,core0_ipc,core1_ipc,sum_ipc
+mix1,shared_lru,0.802,0.474,1.276
+mix1,static_4ways,0.748,0.483,1.231
+mix1,static_8ways,0.805,0.483,1.288
+mix1,static_12ways,0.834,0.483,1.317
+mix1,dynamic_utility,0.685,0.481,1.166
+mix2,shared_lru,0.742,0.600,1.342
+mix2,static_4ways,0.744,0.617,1.361
+mix2,static_8ways,0.801,0.586,1.387
+mix2,static_12ways,0.829,0.564,1.393
+mix2,dynamic_utility,0.607,0.606,1.213
+mix3,shared_lru,0.598,0.431,1.029
+mix3,static_4ways,0.561,0.467,1.028
+mix3,static_8ways,0.584,0.467,1.051
+mix3,static_12ways,0.615,0.468,1.083
+mix3,dynamic_utility,0.616,0.429,1.045

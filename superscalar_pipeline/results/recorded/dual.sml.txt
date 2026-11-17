@@ -1,0 +1,10 @@
+Opening trace file with gunzip: data/traces/pipeline/sml.ptr.gz
+
+** PIPELINE IS 2 WIDE **
+
+
+
+SIM_NUM_INST           	 :        100
+SIM_NUM_CYCLES         	 :         77
+SIM_CPI                	 :      0.770
+

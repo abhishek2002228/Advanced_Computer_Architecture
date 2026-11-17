@@ -1,0 +1,14 @@
+\begin{tikzpicture}[>=Stealth, font=\small, block/.style={draw, minimum width=1.7cm, minimum height=.8cm, align=center}]
+\node[block] (if) at (0,0) {Fetch};
+\node[block] (id) at (2.5,0) {Decode};
+\node[block] (ex) at (5,0) {Execute};
+\node[block] (mem) at (7.5,0) {Memory};
+\node[block] (wb) at (10,0) {Writeback};
+\draw[->] (if) -- (id); \draw[->] (id) -- (ex);
+\draw[->] (ex) -- (mem); \draw[->] (mem) -- (wb);
+\draw[->] (ex.south) -- ++(0,-.8) -| node[pos=.25,below,font=\footnotesize]{ALU forwarding} (id.south);
+\draw[->] (mem.south) -- ++(0,-1.6) -| node[pos=.25,below,font=\footnotesize]{memory forwarding} ([xshift=-.45cm]id.south);
+\node[draw,align=center,minimum width=1.7cm] (bp) at (0,1.65) {Direction\\predictor};
+\draw[->] (bp.south) -- (if.north);
+\draw[->,dashed] (wb.north) -- ++(0,1.65) -- node[above,font=\footnotesize]{branch resolution / fetch release} (bp.east);
+\end{tikzpicture}

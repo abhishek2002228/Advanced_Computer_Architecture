@@ -1,0 +1,15 @@
+# Local benchmark inputs and build artifacts
+/data/traces/pipeline/*.gz
+/data/traces/memory/*.gz
+**/src/sim
+*.o
+.DS_Store
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+# New benchmark sweeps stay separate from recorded measurements.
+**/results/runs/
+__pycache__/
+*.pyc

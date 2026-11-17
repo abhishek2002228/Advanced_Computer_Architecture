@@ -1,0 +1,28 @@
+Verification run: fixed-seed 4 x 4 scalar-reference comparison.
+
+A =
+       6      6      5      2 
+       4      1      1      7 
+       2      1      1      0 
+       4      7      1      5 
+
+B =
+       0      1      2      1 
+       3      2      2      3 
+       3      2      1      2 
+       0      2      3      0 
+
+Golden = A*B =
+      33     32     35     34 
+       6     22     32      9 
+       6      6      7      7 
+      24     30     38     27 
+
+HW result =
+      33     32     35     34 
+       6     22     32      9 
+       6      6      7      7 
+      24     30     38     27 
+
+Cycle = 11
+PASS

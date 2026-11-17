@@ -1,0 +1,5 @@
+n,modeled_cycles,macs_per_cycle,utilization_percent,input_bytes_per_cycle_1byte_elements
+4,11,5.82,36.36,2.91
+16,47,87.15,34.04,10.89
+64,191,1372.48,33.51,42.89
+256,767,21873.81,33.38,170.89
